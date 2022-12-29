@@ -22,9 +22,8 @@ class CollectionResource extends JsonResource
         'id'=>$this->resource->id,
         'name'=>$this->resource->name,
         'season'=>$this->resource->season,
-        'designer_id'=> new DesignerResource($this->resource->designer)
+       'designer_id'=> new DesignerResource($this->resource->designer)
     ];
-   // new DesignerResource($this->resource->designer_id)
-   //$this->resource->designer_id
+
     }
 }

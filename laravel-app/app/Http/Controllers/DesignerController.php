@@ -15,8 +15,10 @@ class DesignerController extends Controller
      */
     public function index()
     {
-         $designers= Collection::all();
-         return CollectionResource::collection($designers);
+        //  $designers= Collection::all();
+        //  return CollectionResource::collection($designers);
+
+
        // $des=Designer::all();
         //return $des;
     }
@@ -50,11 +52,14 @@ class DesignerController extends Controller
      */
     public function show($desId)
     {
-        //return new DesignerResource($designer);
-        $des= Designer::find($desId);
-        if(is_null($des))
-            return response()->json('Does not exist');
-        return response()->json($des);
+
+        // $des= Designer::find($desId);
+        // if(is_null($des))
+        //     return response()->json('Does not exist');
+        // return response()->json($des);
+
+
+           //return new DesignerResource($designer);
     }
 
     /**

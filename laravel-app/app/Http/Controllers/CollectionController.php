@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Collection;
 use Illuminate\Http\Request;
 use App\Http\Resources\CollectionResource;
-
+use App\Http\Resources\CollCollection;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Exception;
 class CollectionController extends Controller
 {
     /**
@@ -16,7 +19,9 @@ class CollectionController extends Controller
     public function index()
     {
         $collections= Collection::all();
-        return CollectionResource::collection($collections);
+        return new CollCollection($collections);
+       // return CollectionResource::collection($collections);
+       // return response()->json(Collection::all());
     }
 
     /**
@@ -37,13 +42,14 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Collection  $collection
+     * @param + \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
     public function show(Collection $collection)
@@ -69,9 +75,9 @@ class CollectionController extends Controller
      * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Collection $collection)
+    public function update(Request $request, Collection $coll)
     {
-        //
+
     }
 
     /**
@@ -80,8 +86,10 @@ class CollectionController extends Controller
      * @param  \App\Models\Collection  $collection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collection $collection)
+    public function destroy(Collection $coll)
     {
-        //
+
+
     }
+
 }
